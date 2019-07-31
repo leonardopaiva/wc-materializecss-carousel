@@ -1,3 +1,12 @@
-// ::slotted(.wrap-carousel) {
-//     display: none;
-// }
+// ==========================================================================
+// 5. Carousel
+// ==========================================================================
+
+$carousel-height: 400px !default;
+$carousel-item-height: $carousel-height / 2 !default;
+$carousel-item-width: $carousel-item-height !default;
+
+my-component {
+  @import "../../../node_modules/materialize-css/sass/components/_carousel.scss";
+}
+

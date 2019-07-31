@@ -10,11 +10,8 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface MyComponent {
-    'customTemplate': boolean;
-    'first': any[];
-    'last': string;
-    'middle': string;
-    'options': any;
+    'items': any[];
+    'template': boolean;
   }
 }
 
@@ -33,12 +30,9 @@ declare global {
 
 declare namespace LocalJSX {
   interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
-    'customTemplate'?: boolean;
-    'first'?: any[];
-    'last'?: string;
-    'middle'?: string;
-    'onTodoCompleted'?: (event: CustomEvent<any>) => void;
-    'options'?: any;
+    'items'?: any[];
+    'onMcssCarouselComponentDidLoad'?: (event: CustomEvent<any>) => void;
+    'template'?: boolean;
   }
 
   interface IntrinsicElements {

@@ -1,36 +1,22 @@
 import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
 
-
 @Component({
   tag: 'my-component',
-  styleUrl: 'my-component.scss',
-  shadow: true
+  styleUrl: 'my-component.scss'
 })
 export class MyComponent {
-  @Event() todoCompleted: EventEmitter;
-  @Prop() first: any[] = [];
-
-  @Prop() options: any = {};
-  @Prop() customTemplate:boolean = false;
-
-  @Prop() middle: string;
-  @Prop() last: string;
+  @Event() mcssCarouselComponentDidLoad: EventEmitter;
+  @Prop() items: any[] = [];
+  @Prop() template:boolean = true;
 
   componentDidLoad() {
-    this.todoCompleted.emit();
-
-    // var carouselTarget = document.querySelector(".carousel");
-    // @ts-ignore
-    // var instance = M.Carousel.init(carouselTarget, {});
+    this.mcssCarouselComponentDidLoad.emit();
   }
 
   defaultRender() {
     return [<div>
-      {
-        <link rel="stylesheet" href={`default.css`} />
-      }
       <div class="carousel">
-        {this.first.map((item) =>
+        {this.items.map((item) =>
           <a class="carousel-item" href="#one!">
             <img src={item.url} title="{item}"/>
             <div>{item.url}</div>
@@ -41,13 +27,10 @@ export class MyComponent {
   }
 
   customRender() {
-    return [<slot></slot>];
   }
 
   render() {
-    if (!this.customTemplate) return this.defaultRender();
-
-    return this.customRender();
+    if(!this.template) return this.defaultRender();
   }
 
 }
