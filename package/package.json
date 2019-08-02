@@ -1,0 +1,30 @@
+{
+  "name": "wc-materializecss-carousel",
+  "version": "1.0.3",
+  "description": "This is an application of materializecss carousel as web component, created with stencil.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardopaiva/wc-materializecss-carousel.git"
+  },
+  "keywords": [
+    "materializecss",
+    "carousel",
+    "stencil",
+    "web",
+    "component",
+    "wc-materializecss-carousel",
+    "web-component",
+    "webcomponent",
+    "angular"
+  ],
+  "author": "Leonardo Souza Paiva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonardopaiva/wc-materializecss-carousel/issues"
+  },
+  "homepage": "https://github.com/leonardopaiva/wc-materializecss-carousel#readme"
+}

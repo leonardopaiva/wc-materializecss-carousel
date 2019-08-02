@@ -3,46 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
-
+  <title>Web Component MaterializeCSS Carousel</title>
   <style>
-    .mytest {
-      background: #900;
+    body {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding-bottom: 60px;
     }
-  </style>
-</head>
-<body>
-  <my-component id="cp-01" template="false">
-    <div class="mytest">cp01</div>
-  </my-component>
-  <my-component id="cp-02" template="false">
-    <div class="mytest">cp-02</div>
-  </my-component>
-  <my-component id="cp-03" template="false">
-    <div class="mytest">cp-03</div>
-  </my-component>
-  <my-component id="cp-04" template="false">
-    <div class="mytest">cp-04</div>
-  </my-component>
-  <my-component id="cp-05" template="false">
-    <div class="mytest">cp-05</div>
-  </my-component>
-  <my-component id="cp-06" template="false">
-    <div class="mytest">cp01</div>
-  </my-component>
+    h3 {
+      text-align: center;
+    }
+    a {
+      transition: 0.3s;
+    }
 
-  <div>line</div>
-  <my-component id="cp-07"  template="true">
-      <div class="mytest">cp02</div>
-      <div class="wrap-carousel">
-        <div class="carousel">
-          <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
-          <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
-        </div>
-      </div>
-  </my-component>
+    .custom-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #f6eee5;
+      margin-top: 30px;
+      padding-top: 30px;
+    }
 
-  <style>
+
+    .wrap-main-title {
+      padding: 15px;
+      background: #efefef;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .small-text {
+      font-size: 11px;
+    }
+    .link-top {
+      text-decoration: none;
+      color: #000;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      transition: opacity 0.3s;
+      opacity: 1;
+    }
+    .link-top:hover {
+      opacity: 0.7;
+    }
+    .link-top img {margin-left: 5px;}
+
+
+
     .wrap-buttons {
       width: 100%;
       background: #efefef;
@@ -52,7 +61,238 @@
       display: flex;
       justify-content: center;
     }
+    button {
+      font-size: 18px;
+      padding: 15px;
+      border-radius: 15px;
+      margin-right: 15px;
+      background: #fff;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    button:focus {
+      outline: 0;
+      border:1px solid #fff;
+    }
+    button:hover {
+      background: #efefef;
+    }
+
+    wc-materializecss-carousel#cp-02 .carousel {
+      height: 100px;
+    }
+    wc-materializecss-carousel#cp-02 .carousel .carousel-item {
+      width: 100px;
+      height: 100px;
+    }
+
   </style>
+</head>
+<body>
+  <div class="wrap-main-title">
+    <div>
+      web-component materializecss carousel
+      <span class="small-text">materializecss + stencil</span>
+    </div>
+    <div>
+      <a class="link-top" href="https://github.com/leonardopaiva/wc-materializecss-carousel" target="_blank">
+        GITHUB
+        <img src="https://www.shareicon.net/data/256x256/2015/10/17/657581_character_512x512.png" alt="" style="width: 32px;">
+      </a>
+    </div>
+  </div>
+
+  <h3 style="padding-top: 10px;">default template</h3>
+  <div>
+    <wc-materializecss-carousel id="cp-01" template="false"></wc-materializecss-carousel>
+  </div>
+  <section class="custom-container" style="margin-bottom: 60px;">
+      <article>
+        <h4 style="margin-left: 30px;">HTML</h4>
+        <pre>
+          <code>
+            &lt;wc-materializecss-carousel template="false">&lt;/wc-materializecss-carousel>
+          </code>
+        </pre>
+      </article>
+      <article>
+        <h4 style="margin-left: 30px;">CSS</h4>
+        <pre>
+          <code>
+              you dont need this css, default values will be 400px;
+              &lt;style>
+                wc-materializecss-carousel .carousel {
+                  height: 300px;
+                }
+                wc-materializecss-carousel .carousel .carousel-item {
+                  width: 300px;
+                  height: 300px;
+                }
+              &lt;/style>
+          </code>
+        </pre>
+      </article>
+      <article>
+        <h4 style="margin-left: 30px;">JS</h4>
+        <pre>
+          <code>
+              &lt;script>
+                //defaults
+                var options = {
+                  dist: -100
+                };
+
+                var defaultArray = [
+                  {
+                    id: 0,
+                    title: '',
+                    url: 'https://lorempixel.com/250/250/nature/1',
+                    link: 'https://lorempixel.com/250/250/nature/1',
+                    alt: 'Imagem 01',
+                    target: ''
+                  },
+                  {
+                    id: 1,
+                    title: '',
+                    url: "https://lorempixel.com/250/250/nature/2",
+                    link: 'https://lorempixel.com/250/250/nature/2',
+                    alt: 'Imagem 02',
+                    target: '_blank'
+                  },
+                  {
+                    id: 2,
+                    title: '',
+                    url: "https://lorempixel.com/250/250/nature/3",
+                    link: 'https://lorempixel.com/250/250/nature/3',
+                    alt: 'Imagem 03',
+                    target: ''
+                  },
+                  {
+                    id: 3,
+                    title: '',
+                    url: "https://lorempixel.com/250/250/nature/4",
+                    link: 'https://lorempixel.com/250/250/nature/4',
+                    alt: 'Imagem 04',
+                    target: ''
+                  },
+                  {
+                    id: 4,
+                    title: '',
+                    url:"https://lorempixel.com/250/250/nature/5",
+                    link: 'https://lorempixel.com/250/250/nature/5',
+                    alt: 'Imagem 05',
+                    target: ''
+                  }
+                ];
+
+                initCarousel("wc-materializecss-carousel");
+
+                function initCarousel(selector) {
+                  var cmp = document.querySelector(selector);
+
+                  if (cmp === null) return;
+
+                  cmp.items = defaultArray;
+
+                  cmp.addEventListener('mcssCarouselComponentDidLoad', event => { onDidLoad() })
+
+                  function onDidLoad() {
+                    if (typeof M === "undefined") {
+                      console.log("M not defined!");
+                      return;
+                    }
+
+                    var carouselTarget = cmp.querySelector(".carousel");
+
+                    var instance = M.Carousel.init(carouselTarget, options);
+                  }
+                }
+              &lt;/script>
+          </code>
+        </pre>
+      </article>
+    </div>
+  </section>
+
+
+  <h3>custom template</h3>
+  <div>
+    <wc-materializecss-carousel id="cp-02">
+      <div class="carousel">
+        <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
+        <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
+        <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/3"></a>
+      </div>
+    </wc-materializecss-carousel>
+  </div>
+  <section class="custom-container">
+      <article>
+        <h4 style="margin-left: 30px;">HTML</h4>
+        <pre>
+          <code>
+            &lt;wc-materializecss-carousel>
+              &lt;div class="carousel">
+                &lt;a class="carousel-item" href="#one!">&lt;img src="https://lorempixel.com/250/250/nature/1">&lt;/a>
+                &lt;a class="carousel-item" href="#two!">&lt;img src="https://lorempixel.com/250/250/nature/2">&lt;/a>
+                &lt;a class="carousel-item" href="#two!">&lt;img src="https://lorempixel.com/250/250/nature/3">&lt;/a>
+              &lt;/div>
+            &lt;/wc-materializecss-carousel>
+          </code>
+        </pre>
+      </article>
+      <article>
+        <h4 style="margin-left: 30px;">CSS</h4>
+        <pre>
+          <code>
+              you dont have to set css, default values will be 400px;
+              &lt;style>
+                wc-materializecss-carousel .carousel {
+                  height: 100px;
+                }
+                wc-materializecss-carousel .carousel .carousel-item {
+                  width: 100px;
+                  height: 100px;
+                }
+              &lt;/style>
+          </code>
+        </pre>
+      </article>
+      <article>
+        <h4 style="margin-left: 30px;">JS</h4>
+        <pre>
+          <code>
+              &lt;script>
+                var options = {
+                  dist: -100
+                };
+
+                initCarousel("wc-materializecss-carousel");
+
+                function initCarousel(selector) {
+                  var cmp = document.querySelector(selector);
+
+                  if (cmp === null) return;
+
+                  cmp.addEventListener('mcssCarouselComponentDidLoad', event => { onDidLoad() })
+
+                  function onDidLoad() {
+                    if (typeof M === "undefined") {
+                      console.log("M not defined!");
+                      return;
+                    }
+
+                    var carouselTarget = cmp.querySelector(".carousel");
+
+                    var instance = M.Carousel.init(carouselTarget, options);
+                  }
+                }
+              &lt;/script>
+          </code>
+        </pre>
+      </article>
+    </div>
+  </section>
+
   <div class="wrap-buttons">
     <button id="add-item-button">add item</button>
     <button id="next-item-button">move to next</button>
@@ -61,11 +301,46 @@
   <script>
     //defaults
     var defaultArray = [
-      {url: 'https://lorempixel.com/250/250/nature/1'},
-      {url: "https://lorempixel.com/250/250/nature/2"},
-      {url: "https://lorempixel.com/250/250/nature/3"},
-      {url: "https://lorempixel.com/250/250/nature/4"},
-      {url:"https://lorempixel.com/250/250/nature/5"}
+      {
+        id: 0,
+        title: '',
+        url: 'https://lorempixel.com/250/250/nature/1',
+        link: 'https://lorempixel.com/250/250/nature/1',
+        alt: 'Imagem 01',
+        target: ''
+      },
+      {
+        id: 1,
+        title: '',
+        url: "https://lorempixel.com/250/250/nature/2",
+        link: 'https://lorempixel.com/250/250/nature/2',
+        alt: 'Imagem 02',
+        target: '_blank'
+      },
+      {
+        id: 2,
+        title: '',
+        url: "https://lorempixel.com/250/250/nature/3",
+        link: 'https://lorempixel.com/250/250/nature/3',
+        alt: 'Imagem 03',
+        target: ''
+      },
+      {
+        id: 3,
+        title: '',
+        url: "https://lorempixel.com/250/250/nature/4",
+        link: 'https://lorempixel.com/250/250/nature/4',
+        alt: 'Imagem 04',
+        target: ''
+      },
+      {
+        id: 4,
+        title: '',
+        url:"https://lorempixel.com/250/250/nature/5",
+        link: 'https://lorempixel.com/250/250/nature/5',
+        alt: 'Imagem 05',
+        target: ''
+      }
     ];
     var options = {
       dist: -100
@@ -74,11 +349,6 @@
     //callinit
     initCarousel("#cp-01");
     initCarousel("#cp-02");
-    initCarousel("#cp-03");
-    initCarousel("#cp-04");
-    initCarousel("#cp-05");
-    initCarousel("#cp-06");
-    initCarousel("#cp-07");
 
     /* ACTION ADD ITEM DEMONSTRATION */
     var btAdd = document.querySelector("#add-item-button");

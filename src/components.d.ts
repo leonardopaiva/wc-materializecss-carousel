@@ -6,11 +6,13 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  carouselItems,
+} from './components/wc-materializecss-carousel/wc-materializecss-carousel';
 
 export namespace Components {
-  interface MyComponent {
-    'items': any[];
+  interface WcMaterializecssCarousel {
+    'items': carouselItems[];
     'template': boolean;
   }
 }
@@ -18,25 +20,25 @@ export namespace Components {
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLWcMaterializecssCarouselElement extends Components.WcMaterializecssCarousel, HTMLStencilElement {}
+  var HTMLWcMaterializecssCarouselElement: {
+    prototype: HTMLWcMaterializecssCarouselElement;
+    new (): HTMLWcMaterializecssCarouselElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'wc-materializecss-carousel': HTMLWcMaterializecssCarouselElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes<HTMLMyComponentElement> {
-    'items'?: any[];
+  interface WcMaterializecssCarousel extends JSXBase.HTMLAttributes<HTMLWcMaterializecssCarouselElement> {
+    'items'?: carouselItems[];
     'onMcssCarouselComponentDidLoad'?: (event: CustomEvent<any>) => void;
     'template'?: boolean;
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'wc-materializecss-carousel': WcMaterializecssCarousel;
   }
 }
 

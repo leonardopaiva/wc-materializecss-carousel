@@ -6,7 +6,8 @@ $carousel-height: 400px !default;
 $carousel-item-height: $carousel-height / 2 !default;
 $carousel-item-width: $carousel-item-height !default;
 
-my-component {
+wc-materializecss-carousel {
+  a {transition: none;}
   @import "../../../node_modules/materialize-css/sass/components/_carousel.scss";
 }
 
