@@ -3,7 +3,7 @@
 
 If you only want to use the <wc-materializecss-carousel> component go to package folder:
 
-- [wc-materializecss-carousel](https://github.com/leonardopaiva/wc-materializecss-carousel/package)
+- [wc-materializecss-carousel](https://github.com/leonardopaiva/wc-materializecss-carousel/tree/master/package)
 
 ### Know issues
 A generic selector like that will affect the carousel:
