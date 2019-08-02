@@ -6,39 +6,25 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-import {
-  carouselItems,
-} from './components/wc-materializecss-carousel/wc-materializecss-carousel';
+
 
 export namespace Components {
-  interface WcMaterializecssCarousel {
-    'items': carouselItems[];
-    'template': boolean;
-  }
+
 }
 
 declare global {
 
 
-  interface HTMLWcMaterializecssCarouselElement extends Components.WcMaterializecssCarousel, HTMLStencilElement {}
-  var HTMLWcMaterializecssCarouselElement: {
-    prototype: HTMLWcMaterializecssCarouselElement;
-    new (): HTMLWcMaterializecssCarouselElement;
-  };
   interface HTMLElementTagNameMap {
-    'wc-materializecss-carousel': HTMLWcMaterializecssCarouselElement;
+
   }
 }
 
 declare namespace LocalJSX {
-  interface WcMaterializecssCarousel extends JSXBase.HTMLAttributes<HTMLWcMaterializecssCarouselElement> {
-    'items'?: carouselItems[];
-    'onMcssCarouselComponentDidLoad'?: (event: CustomEvent<any>) => void;
-    'template'?: boolean;
-  }
+
 
   interface IntrinsicElements {
-    'wc-materializecss-carousel': WcMaterializecssCarousel;
+
   }
 }
 
