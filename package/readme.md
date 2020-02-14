@@ -185,7 +185,7 @@ js
 </script>
 ```
 
-## Install in Angular
+## Install in Angular (não testado acima da versão 8)
 ##### [back to menu](#menu)
 ### Know issues
 - currently the carousel does not work with other libraries that use generic selectors, for example the bootstrap, because it has some very generic selectors (.carousel) for example. An update will be made soon.
