@@ -24,6 +24,8 @@ There you can generate your own web component if you have more specific needs, a
 
 ## Installing to basic html js project 
 ##### [back to menu](#menu)
+### Know issues
+- currently the carousel does not work with other libraries that use generic selectors, for example the bootstrap, because it has some very generic selectors (.carousel) for example. An update will be made soon.
 
 Run ``npm install wc-materializecss-carousel --save`` <br />
 
@@ -185,6 +187,8 @@ js
 
 ## Install in Angular
 ##### [back to menu](#menu)
+### Know issues
+- currently the carousel does not work with other libraries that use generic selectors, for example the bootstrap, because it has some very generic selectors (.carousel) for example. An update will be made soon.
 
 Run ``npm install wc-materializecss-carousel --save`` <br />
 
